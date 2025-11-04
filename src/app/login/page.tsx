@@ -18,7 +18,7 @@ export default function LoginPage() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       await createUserProfile(userCredential.user); // Call createUserProfile
-      router.push('/dashboard'); // Redirect to dashboard after successful login
+      window.location.href = '/dashboard';
     } catch (err: any) {
       setError(err.message);
     }

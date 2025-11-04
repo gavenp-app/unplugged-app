@@ -18,7 +18,7 @@ export default function SignUpPage() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await createUserProfile(userCredential.user); // Call createUserProfile
-      router.push('/dashboard'); // Redirect to dashboard after successful signup
+      window.location.href = '/dashboard';
     } catch (err: any) {
       setError(err.message);
     }
